@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Wedding</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+            display: none; /* Hide content until password is entered */
+        }
+        h1 {
+            color: #333;
+        }
+        .gallery {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .gallery a {
+            text-decoration: none;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .gallery a:hover {
+            transform: scale(1.05);
+        }
+        .gallery img {
+            width: 250px;
+            height: 170px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+    </style>
+    <script>
+        // Simple password protection
+        window.onload = function() {
+            const password = "wedding2025"; // Change this to your desired password
+            let enteredPassword = localStorage.getItem("wedding_password");
+            
+            if (enteredPassword !== password) {
+                enteredPassword = prompt("Enter the password to access this page:");
+                if (enteredPassword === password) {
+                    localStorage.setItem("wedding_password", password);
+                    document.body.style.display = "block"; // Show content
+                } else {
+                    alert("Incorrect password. Redirecting...");
+                    window.location.href = "https://google.com"; // Redirect on failure
+                }
+            } else {
+                document.body.style.display = "block"; // Show content if password is stored
+            }
+        };
+    </script>
+</head>
+<body>
+    <h1>Our Wedding Memories</h1>
+    <p>Click on the photos below to view full albums.</p>
+    
+    <div class="gallery">
+        <a href="https://photos.app.goo.gl/your_album_link1" target="_blank">
+            <img src="https://your_thumbnail_image1_url" alt="Album 1">
+        </a>
+        <a href="https://photos.app.goo.gl/your_album_link2" target="_blank">
+            <img src="https://your_thumbnail_image2_url" alt="Album 2">
+        </a>
+        <a href="https://photos.app.goo.gl/your_album_link3" target="_blank">
+            <img src="https://your_thumbnail_image3_url" alt="Album 3">
+        </a>
+        <a href="https://photos.app.goo.gl/your_album_link4" target="_blank">
+            <img src="https://your_thumbnail_image4_url" alt="Album 4">
+        </a>
+    </div>
+</body>
+</html>
