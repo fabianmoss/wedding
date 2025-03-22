@@ -11,7 +11,6 @@
             background-color: #f9f9f9;
             margin: 0;
             padding: 20px;
-            display: none; /* Hide content until password is entered */
         }
         h1 {
             color: #333;
@@ -40,43 +39,23 @@
             border-radius: 10px;
         }
     </style>
-    <script>
-        // Simple password protection
-        window.onload = function() {
-            const password = "wedding2025"; // Change this to your desired password
-            let enteredPassword = localStorage.getItem("wedding_password");
-            
-            if (enteredPassword !== password) {
-                enteredPassword = prompt("Enter the password to access this page:");
-                if (enteredPassword === password) {
-                    localStorage.setItem("wedding_password", password);
-                    document.body.style.display = "block"; // Show content
-                } else {
-                    alert("Incorrect password. Redirecting...");
-                    window.location.href = "https://google.com"; // Redirect on failure
-                }
-            } else {
-                document.body.style.display = "block"; // Show content if password is stored
-            }
-        };
-    </script>
 </head>
 <body>
     <h1>Our Wedding Memories</h1>
-    <p>Click on the photos below to view full albums.</p>
+    <p>Click on the photos below to view more.</p>
     
     <div class="gallery">
-        <a href="https://photos.app.goo.gl/your_album_link1" target="_blank">
-            <img src="https://your_thumbnail_image1_url" alt="Album 1">
+        <a href="album1.html">
+            <img src="images/photo1.jpg" alt="Album 1">
         </a>
-        <a href="https://photos.app.goo.gl/your_album_link2" target="_blank">
-            <img src="https://your_thumbnail_image2_url" alt="Album 2">
+        <a href="album2.html">
+            <img src="images/photo2.jpg" alt="Album 2">
         </a>
-        <a href="https://photos.app.goo.gl/your_album_link3" target="_blank">
-            <img src="https://your_thumbnail_image3_url" alt="Album 3">
+        <a href="album3.html">
+            <img src="images/photo3.jpg" alt="Album 3">
         </a>
-        <a href="https://photos.app.goo.gl/your_album_link4" target="_blank">
-            <img src="https://your_thumbnail_image4_url" alt="Album 4">
+        <a href="album4.html">
+            <img src="images/photo4.jpg" alt="Album 4">
         </a>
     </div>
 </body>
