@@ -40,6 +40,12 @@ p {
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 250px; /* Define a fixed width for the images */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover Effect - Transparency */
+.gallery a:hover img {
+    opacity: 0.8; /* Make image slightly transparent on hover */
 }
 
 /* Image Styling */
